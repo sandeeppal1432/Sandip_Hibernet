@@ -12,14 +12,15 @@ public class Client {
 
 	public static void main(String[] args) {
       
-		Employee e= new Employee(3, "Ansh", 22, "Male" , 45784);
+		Employee e= new Employee(4, "Anshi", 22, "female" , 45784);
 
-	// 	Configuration cfg = new Configuration().configure();
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 		Session session = sf.openSession();
 		Transaction tx = session.beginTransaction();
-//		session.save(e);
-//		tx.commit();
+		session.save(e);
+		tx.commit();
+
+	
 	}
 
 }
